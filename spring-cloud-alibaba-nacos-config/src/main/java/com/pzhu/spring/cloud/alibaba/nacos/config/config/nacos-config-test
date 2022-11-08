@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: nacos-config
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.9.20:8848
+
+server:
+  port: 8085
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+username: guo-test

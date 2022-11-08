@@ -10,8 +10,8 @@ import java.util.List;
 
 /**
  * BgBlogServiceFeign的熔断器
- * @Author Guo Huaijian
- * @Date 2020/3/15 18:05
+ * @Author PoorRichard
+ * @Date  18:05
  */
 @Component
 public class BgBlogServiceFeignSentinel implements BgBlogServiceFeign {

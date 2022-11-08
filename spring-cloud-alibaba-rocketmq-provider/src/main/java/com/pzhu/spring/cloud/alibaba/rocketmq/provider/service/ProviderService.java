@@ -7,8 +7,8 @@ import org.springframework.messaging.support.MessageBuilder;
 import org.springframework.stereotype.Service;
 
 /**
- * @Author Guo Huaijian
- * @Date 2020/3/17 1:52
+ * @Author PoorRichard
+ * @Date  1:52
  */
 @Service
 public class ProviderService implements CommandLineRunner {

@@ -7,8 +7,8 @@ import org.springframework.cloud.stream.messaging.Sink;
 
 /**
  * 消息队列消费者
- * @Author Guo Huaijian
- * @Date 2020/3/17 1:59
+ * @Author
+ * @Date  1:59
  */
 @SpringBootApplication
 @EnableBinding({Sink.class})

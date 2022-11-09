@@ -83,7 +83,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.pzhu.spring.cloud.alibaba.provider.ProviderApplication</mainClass>
+                    <mainClass>com.pzhu.spring.cloud.alibaba.basedata.ProviderApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

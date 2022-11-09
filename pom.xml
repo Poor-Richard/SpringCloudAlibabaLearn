@@ -4,6 +4,12 @@
     <modelVersion>4.0.0</modelVersion>
 
     <modules>
+        <module>spring-cloud-alibaba-trade</module>
+        <module>spring-cloud-alibaba-strategy</module>
+        <module>spring-cloud-alibaba-house</module>
+        <module>spring-cloud-alibaba-newhouse</module>
+        <module>spring-cloud-alibaba-apartment</module>
+        <module>spring-cloud-alibaba-basedata</module>
         <module>spring-cloud-alibaba-common</module>
         <module>spring-cloud-alibaba-consumer</module>
         <module>spring-cloud-alibaba-feign</module>

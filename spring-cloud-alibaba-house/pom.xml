@@ -84,7 +84,7 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
                 <configuration>
-                    <mainClass>com.pzhu.spring.cloud.alibaba.basedata.HouseApplication</mainClass>
+                    <mainClass>com.pzhu.spring.cloud.alibaba.provider.HouseApplication</mainClass>
                 </configuration>
             </plugin>
         </plugins>

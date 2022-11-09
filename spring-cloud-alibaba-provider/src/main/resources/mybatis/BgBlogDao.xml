@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.pzhu.spring.cloud.alibaba.basedata.dao.BgBlogDao">
+<mapper namespace="com.pzhu.spring.cloud.alibaba.provider.dao.BgBlogDao">
 
     <resultMap type="com.pzhu.spring.cloud.alibaba.common.domain.BgBlog" id="BgBlogMap">
         <result property="blogId" column="blog_id" jdbcType="INTEGER"/>

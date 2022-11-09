@@ -3,6 +3,8 @@ package com.pzhu.spring.cloud.alibaba.gateway.filters;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.collect.Maps;
+import com.pzhu.spring.cloud.alibaba.gateway.util.RedisService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.gateway.filter.GatewayFilterChain;
 import org.springframework.cloud.gateway.filter.GlobalFilter;
 import org.springframework.core.Ordered;
@@ -13,6 +15,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.server.ServerWebExchange;
 import reactor.core.publisher.Mono;
 
+import javax.annotation.Resource;
 import java.util.Map;
 
 /**
@@ -20,11 +23,26 @@ import java.util.Map;
  * @Author PoorRichard
  * @Date  23:33
  */
+@Slf4j
 @Component
 public class AuthFilter implements GlobalFilter, Ordered {
+
+    @Resource
+    private RedisService redisService;
+
+    //无需拦截的请求
+    private  String [] paths = {"登录接口URL"};
     @Override
     public Mono<Void> filter(ServerWebExchange exchange, GatewayFilterChain chain) {
         String token = exchange.getRequest().getQueryParams().getFirst("token");
+
+        String path = exchange.getRequest().getPath().toString();
+        log.info("path:" + path);
+        for (String p : paths) {// 直接放行
+            if (p.equals(path)) {
+                return chain.filter(exchange);
+            }
+        }
 
         if (token == null || token.isEmpty()) {
             ServerHttpResponse response = exchange.getResponse();

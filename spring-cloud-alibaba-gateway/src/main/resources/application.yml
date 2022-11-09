@@ -1,4 +1,17 @@
 spring:
+  #redis服务器地址
+  redis:
+    port: 6379
+    host: 192.168.9.20
+    #    password: 123456
+    database: 0
+    timeout: 3000
+    jedis:
+      pool:
+        max-active: 8
+        max-idle: 8
+        min-idle: 0
+        max-wait: -1
   application:
     # 应用名称
     name: gateway
@@ -20,6 +33,14 @@ spring:
           enabled: true
       # 配置路由规则
       routes:
+        - id: NACOS-TRADE
+          uri: lb://nacos-trade
+          predicates:
+            - Method=GET,POST
+        - id: NACOS-STRATEGY
+          uri: lb://nacos-strategy
+          predicates:
+            - Method=GET,POST
         # 采用自定义路由 ID（有固定用法，不同的 id 有不同的功能，详见：https://cloud.spring.io/spring-cloud-gateway/2.0.x/single/spring-cloud-gateway.html#gateway-route-filters）
         - id: NACOS-CONSUMER
           # 采用 LoadBalanceClient 方式请求，以 lb:// 开头，后面的是注册在 Nacos 上的服务名
